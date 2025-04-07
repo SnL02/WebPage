@@ -13,11 +13,12 @@
         <div class="logo">💞 AIris</div>
       <ul>
         <li><a href="#overview">Overview</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#challenges">Challenges</a></li>
         <li><a href="#team">Team</a></li>
         <li><a href="#progress">Progress</a></li>
-        <li><a href="#report">Report</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#challenges">Challenges</a></li>
+        <li><a href="#next-plan">Next Plans</a></li>
+        <li><a href="#report"> Download Report</a></li>
       </ul>
     </nav>
   </header>
@@ -28,59 +29,465 @@
       <p>AIris is an intelligent dating platform built with microservices and powered by AI. It aims to improve matchmaking accuracy, ensure authenticity, and offer a seamless user experience through advanced recommendation algorithms and real-time communication features.</p>
     </section>
 
-    <section id="achievements">
-      <h2>Achievements</h2>
-      <ul>
-        <li>Designed a microservices-based architecture using Spring Cloud.</li>
-        <li>Established polyglot persistence with MySQL, MongoDB, Redis.</li>
-        <li>Developed personalized recommendation system using CF, MF, Transformers.</li>
-        <li>Built AI-based image moderation for user verification.</li>
-      </ul>
-    </section>
-
-    <section id="challenges">
-      <h2>Challenges</h2>
-      <ul>
-        <li>Ensuring smooth inter-service communication with scalability.</li>
-        <li>Fine-tuning recommendation model accuracy in dynamic environments.</li>
-        <li>Optimizing real-time performance for chat and session management.</li>
-      </ul>
-    </section>
-
     <section id="team">
-      <h2>Team Members</h2>
-      <ul class="team">
-        <li><strong>Mao Yu </strong>3036381993 - Team Leader</li>
-        <li>Li Yuhan 3036381876</li>
-        <li>Guan Aoran 3036382789</li>
-        <li>Zhong Xiaojian 3036411712</li>
-      </ul>
-    </section>
+        <h2>Team Members</h2>
+        <ul class="team">
+          <li><strong>Mao Yu </strong>3036381993 - Team Leader</li>
+          <li>Li Yuhan 3036381876</li>
+          <li>Guan Aoran 3036382789</li>
+          <li>Zhong Xiaojian 3036411712</li>
+        </ul>
+      </section>
 
     <section id="progress">
-      <h2>Project Progress</h2>
+        <h2>Project Progress</h2>
+  
+        <div class="milestone">
+          <p>Milestone 1 - Microservices Design & Setup <span class="time"> (Apr 7)</span></p>
+          <div class="progress-bar"><div data-percentage="100"><span></span></div></div>
+        </div>
+        <div class="milestone">
+          <p>Milestone 2 - Authentication & Matching Model <span class="time">(May 5)</span></p>
+          <div class="progress-bar"><div data-percentage="0"><span></span></div></div>
+        </div>
+        <div class="milestone">
+          <p>Milestone 3 - Real-Time Chat System <span class="time">(Jun 1)</span></p>
+          <div class="progress-bar"><div data-percentage="0"><span></span></div></div>
+        </div>
+        <div class="milestone">
+          <p>Milestone 4 - Optimization & Scalability <span class="time">(Jun 16)</span></p>
+          <div class="progress-bar"><div data-percentage="0"><span></span></div></div>
+        </div>
+        <div class="milestone">
+          <p>Milestone 5 - Final Testing & Documentation <span class="time">(Early July)</span></p>
+          <div class="progress-bar"><div data-percentage="0"><span></span></div></div>
+        </div>
+      </section>
 
-      <div class="milestone">
-        <p>Milestone 1 - Microservices Design & Setup <span class="time"> (Apr 7)</span></p>
-        <div class="progress-bar"><div data-percentage="100"><span></span></div></div>
-      </div>
-      <div class="milestone">
-        <p>Milestone 2 - Authentication & Matching Model <span class="time">(May 5)</span></p>
-        <div class="progress-bar"><div data-percentage="0"><span></span></div></div>
-      </div>
-      <div class="milestone">
-        <p>Milestone 3 - Real-Time Chat System <span class="time">(Jun 1)</span></p>
-        <div class="progress-bar"><div data-percentage="0"><span></span></div></div>
-      </div>
-      <div class="milestone">
-        <p>Milestone 4 - Optimization & Scalability <span class="time">(Jun 16)</span></p>
-        <div class="progress-bar"><div data-percentage="0"><span></span></div></div>
-      </div>
-      <div class="milestone">
-        <p>Milestone 5 - Final Testing & Documentation <span class="time">(Early July)</span></p>
-        <div class="progress-bar"><div data-percentage="0"><span></span></div></div>
-      </div>
-    </section>
+    <section id="achievements">
+        <h2>Achievements</h2>
+      
+        <h3>1. System Architecture</h3>
+        <p>We have completed the design of a microservices-based architecture. The architecture includes an API Gateway for routing and authentication, and separates core services like User, Matching, Chat, Media, and Notification. Data is stored using a polyglot persistence strategy, including MySQL, MongoDB, Redis, and CDN storage. Message queues ensure efficient asynchronous communication.</p>
+      
+        <div class="diagram">
+            <img src="architecture.png" alt="System Architecture Diagram"
+                 style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 10px;" />
+        </div>
+      
+        <h3>2. Algorithm Design</h3>
+        <p>Following the initial screening phase, the proposed plan focuses on designing a robust framework that integrates multiple algorithms for search and promotion functionalities. The objective is to enhance user experience by delivering more accurate, comprehensive, and personalized recommendations. The framework combines a tag-based recommendation algorithm and a collaborative filtering algorithm, leveraging their complementary strengths to address diverse user needs. Below, we outline the key components, implementation strategies, and integration approach.</p>
+
+        <h4>2.1 Tag-Based Recommendation Algorithm</h4>
+        <p>The tag-based recommendation system aims to capture explicit user preferences and facilitate initial matching, particularly for new users. At the point of registration, a structured tag input interface will be introduced, comprising two main categories:</p>
+        <ul>
+        <li>
+            <strong>Self-Description Tags:</strong> Examples include “love to travel,” “anime enthusiast,” or “fitness expert,” reflecting users’ personal traits or identities.
+        </li>
+        <li>
+            <strong>Interests and Preferences Tags:</strong> Examples such as “want to meet funny people,” “like to discuss technology,” or “prefer quiet personalities” indicate desired connections or content.
+        </li>
+        </ul>
+        <p>To ensure scalability and consistency, a predefined library of commonly used tags will be provided, supplemented by an option for users to input custom tags. Custom inputs will undergo review or clustering (e.g., using K-Means or DBSCAN) to prevent excessive fragmentation. Tag similarity between users will be calculated using established metrics such as Cosine Similarity or the Jaccard Similarity Coefficient. For instance, if User A has tags {Travel, Food, Movies} and User B has {Travel, Music, Photography}, the Jaccard similarity is computed as |A ∩ B| / |A ∪ B| = 1/6.</p>
+        <p>To enhance precision, users will be prompted to prioritize their tags during onboarding, assigning higher weights to critical preferences (e.g., “must like pets” could carry double the weight of standard tags). In the initial stage, recommendations will be generated by filtering the database for the Top-N users with the highest tag similarity scores. As user behavior data accumulates (e.g., browsing history, likes), tag weights will be dynamically updated, and implicit tags (e.g., “sports enthusiast” for frequent sports content viewers) will be inferred and added.</p>
+        <p>For efficient computation, user tags will be converted into vector representations, such as One-Hot encoding or TF-IDF, enabling similarity calculations. Additionally, clustering techniques like K-Means or DBSCAN will be employed to group users with similar interests, reducing the computational load of pairwise matching and identifying latent interest communities.</p>
+        
+
+        <h4>2.2 Collaborative Filtering Algorithm</h4>
+        <p>While the tag-based approach provides a solid foundation, it lacks the depth to capture dynamic preferences or behavioral nuances. The collaborative filtering algorithm addresses this by analyzing user interactions, including explicit actions (e.g., likes, comments, chat frequency, browsing duration) and implicit feedback (e.g., skipping recommended items as negative signals). Two complementary strategies will be implemented:</p>
+        <ul>
+        <li>
+            <strong>User-Based Collaborative Filtering: </strong> This method identifies users with similar behavioral patterns. For example, if User A and User B exhibit comparable interactions (e.g., liking or engaging with Users C and D), their interests are likely aligned. Behavioral similarity will be measured using Pearson’s Correlation Coefficient or Cosine Similarity, enabling recommendations of items User B enjoys but User A has not yet encountered.
+        </li>
+        <li>
+            <strong>Item-Based Collaborative Filtering:</strong> This approach focuses on object similarity. If User A likes User X, and User X shares behavioral patterns with User Y (e.g., both are frequently liked by the same group), User Y may be recommended to User A.
+        </li>
+        </ul>
+        <p>Implementation will involve constructing a user-object interaction matrix, followed by similarity calculations between objects to recommend related items. To uncover latent features, matrix decomposition techniques such as Singular Value Decomposition (SVD) or Alternating Least Squares (ALS) will be applied. Alternatively, neural network-based methods (e.g., Autoencoders or Embeddings) will transform user behavior into low-dimensional vectors, improving recommendation accuracy and scalability. </p>
+        
+        <h4>2.3 Integration of Tag-Based and Collaborative Filtering Algorithms</h4>
+        <p>The fusion of these algorithms is designed to balance explicit user input with inferred preferences, adapting to users’ lifecycle stages. For new users with limited behavioral data, the system will prioritize tag-based recommendations to quickly match them with similar individuals based on stated interests. As behavioral data accumulates, collaborative filtering will assume a more dominant role, leveraging interaction patterns to uncover deeper preferences. The tag-based approach will continue to serve as a corrective mechanism, ensuring explicit interests are not overlooked. The integration will employ a linear weighting formula to combine recommendation scores:</p>
+        <p style="text-align: center; font-weight: bold; font-size: 1.05em;">
+            Score = α × Label Similarity + (1 − α) × Collaborative Filtering Score
+        </p> 
+        <p>Here, α represents the weight assigned to the tag-based component. For new users, α will be set close to 1, emphasizing tag similarity. As usage time and data volume increase, α will gradually decrease, shifting reliance toward collaborative filtering. The exact adjustment of α will be fine-tuned based on user engagement metrics and A/B testing results.</p>
+        <p>To ensure compatibility, both tag and behavioral data will be unified into vector representations. Tag embeddings will be trained using techniques like Word2Vec, while behavioral embeddings will be derived from interaction data. Operationally, tag-based matching will be updated daily via batch processing, while collaborative filtering will support real-time adjustments through online computation, ensuring responsiveness to user activity.</p>
+        
+
+
+      
+        <h3>3. Software Development</h3>
+        <p>During this time, the main tasks of software development are Services Separation, API and Database Design.</p>
+        <h4>3.1 User Service</h4>
+        <ul>
+            <li><strong>Responsibilities:</strong> User lifecycle management, credential management, user profile maintenance</li>
+            <li><strong>Core Functions:</strong> Registration / Login / Logout, Authentication and Authorization</li>
+            <li><strong>Technologies:</strong> Spring Security + JWT</li>
+        </ul>
+
+        <p><strong>API:</strong></p>
+        <pre><code>
+        POST /api/v1/auth/register       - User register
+        POST /api/v1/auth/login          - User login
+        POST /api/v1/auth/logout         - User logout
+        POST /api/v1/auth/refresh-token  - Refresh token
+        GET  /api/v1/users/{id}          - Get user information
+        PUT  /api/v1/users/{id}          - Update user profile
+        GET  /api/v1/users/settings      - Get user settings
+        PUT  /api/v1/users/settings      - Update user settings
+        </code></pre>
+
+        <p><strong>MySQL Tables:</strong></p>
+        <pre><code>
+            CREATE TABLE users (
+                id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                username VARCHAR(50) UNIQUE NOT NULL,
+                email VARCHAR(100) UNIQUE NOT NULL,
+                phone VARCHAR(20),
+                password_hash VARCHAR(255) NOT NULL,
+                account_status ENUM('ACTIVE', 'INACTIVE', 'SUSPENDED', 'DELETED') NOT NULL,
+                created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+              );
+              
+              CREATE TABLE user_settings (
+                id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                user_id BIGINT NOT NULL,
+                notification_email BOOLEAN DEFAULT TRUE,
+                notification_push BOOLEAN DEFAULT TRUE,
+                notification_sms BOOLEAN DEFAULT FALSE,
+                privacy_level ENUM('PUBLIC', 'PRIVATE', 'FRIENDS_ONLY') DEFAULT 'PUBLIC',
+                display_online_status BOOLEAN DEFAULT TRUE,
+                display_last_active BOOLEAN DEFAULT TRUE,
+                created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                FOREIGN KEY (user_id) REFERENCES users(id)
+              );
+        </code></pre>
+        <p><strong>MongoDB:</strong></p>
+        <pre><code>
+            user_preferences {
+                _id: ObjectId,
+                user_id: Long,
+                age_range: { min: Number, max: Number },
+                distance_preference: Number,
+                gender_preference: [String],
+                interests: [String],
+                important_traits: [String],
+                deal_breakers: [String],
+                matching_priorities: Object,
+                created_at: Date,
+                updated_at: Date
+              }              
+        </code></pre>
+
+        <h4>3.2 Matching Service</h4>
+        <ul>
+            <li><strong>Responsibilities:</strong> Intelligent recommendation engine, matching algorithm execution.</li>
+            <li><strong>Core Functions:</strong> Recommendations based on user portraits (collaborative filtering + deep learning), dynamic weight adjustment (behavioral data feedback), matching pool management.</li>
+        </ul>
+        <p><strong>API:</strong></p>
+        <pre><code>
+            GET /api/v1/matches/recommendations - Get recommended user list
+            GET /api/v1/matches - Get successful matching
+            DELETE /api/v1/matches/{matchId} - remove matching
+            GET /api/v1/matches/compatibility/{targetUserId} - Get compatibility score            
+        </code></pre>
+        <p><strong>MongoDB:</strong></p>
+        <pre><code>
+            user_interactions {
+                _id: ObjectId,
+                user_id: Long,
+                target_user_id: Long,
+                interaction_type: String, // 'LIKE', 'DISLIKE', 'SUPERLIKE'
+                created_at: Date
+              }
+              
+              matches {
+                _id: ObjectId,
+                user1_id: Long,
+                user2_id: Long,
+                match_score: Number,
+                match_factors: Object,
+                match_date: Date,
+                status: String, // 'ACTIVE', 'INACTIVE', 'BLOCKED'
+                last_interaction_date: Date
+              }
+              
+              recommendation_history {
+                _id: ObjectId,
+                user_id: Long,
+                recommended_users: [Long],
+                factors: Object,
+                created_at: Date
+              }                         
+        </code></pre>
+      
+        <h4>3.3 Chat Service</h4>
+        <ul>
+            <li><strong>Responsibilities:</strong> Real-time communication management</li>
+            <li><strong>Core Functions:</strong> WebSocket message routing, message storage and state synchronization, illegal message filtering (AI content review)</li>
+            <li><strong>Technologies:</strong> WebSocket</li>
+          </ul>
+        <p><strong>API:</strong></p>
+        <pre><code>
+            WebSocket: /ws/chat
+            GET /api/v1/chat/conversations - get conversation list
+            GET /api/v1/chat/conversations/{conversationId}/messages - get chatting history
+            POST /api/v1/chat/conversations/{conversationId}/messages - send a message
+            PUT /api/v1/chat/messages/{messageId}/read - mark a message as read
+        </code></pre>
+        <p><strong>MongoDB:</strong></p>
+        <pre><code>
+            conversations {
+                _id: ObjectId,
+                participants: [Long],
+                last_message: Object,
+                created_at: Date,
+                updated_at: Date
+              }
+              
+              messages {
+                _id: ObjectId,
+                conversation_id: ObjectId,
+                sender_id: Long,
+                message_type: String, // 'TEXT', 'IMAGE', 'VIDEO', 'AUDIO', 'LOCATION'
+                content: String,
+                media_url: String,
+                read_by: [Long],
+                created_at: Date
+              }                        
+        </code></pre>
+
+        <h4>3.4 Media Service</h4>
+        <ul>
+            <li><strong>Responsibilities:</strong> Multimedia content management</li>
+            <li><strong>Core Functions:</strong> AI image/video review, CDN distribution management</li>
+            <li><strong>Technologies:</strong> FFmpeg processing, OSS storage</li>
+          </ul>
+        <p><strong>API:</strong></p>
+        <pre><code>
+            POST /api/v1/media/upload - upload media
+            GET /api/v1/media/{mediaId} - get media
+            DELETE /api/v1/media/{mediaId} - delete media
+            POST /api/v1/media/{mediaId}/moderate - moderate media by administrators
+        </code></pre>
+        <p><strong>MongoDB:</strong></p>
+        <pre><code>
+            media_assets {
+                _id: ObjectId,
+                user_id: Long,
+                file_name: String,
+                file_type: String,
+                file_size: Number,
+                url: String,
+                thumbnail_url: String,
+                dimensions: {
+                  width: Number,
+                  height: Number
+                },
+                moderation_status: String, // 'PENDING', 'APPROVED', 'REJECTED'
+                ai_tags: [String],
+                created_at: Date
+              }
+              
+              media_moderation {
+                _id: ObjectId,
+                media_id: ObjectId,
+                moderation_type: String, // 'AUTO', 'MANUAL'
+                status: String,
+                rejection_reason: String,
+                moderator_id: Long,
+                moderation_date: Date
+              }                          
+        </code></pre>
+
+        <h4>3.5 Notification Service</h4>
+        <ul>
+            <li><strong>Responsibilities:</strong> Asynchronous message push</li>
+            <li><strong>Core Functions:</strong> Notification / SMS / Email sending</li>
+            <li><strong>Technologies:</strong> MQ peak shaving and valley filling, multi-channel routing</li>
+        </ul>
+        <p><strong>API:</strong></p>
+        <pre><code>
+            GET /api/v1/notifications - get latest notifications
+            PUT /api/v1/notifications/{notificationId}/read - mark a notification as read
+        </code></pre>
+        <p><strong>MongoDB:</strong></p>
+        <pre><code>
+            notifications {
+                _id: ObjectId,
+                user_id: Long,
+                type: String, // 'MATCH', 'MESSAGE', 'LIKE', 'SYSTEM' , etc.
+                title: String,
+                content: String,
+                related_entity_id: String,
+                related_entity_type: String,
+                is_read: Boolean,
+                created_at: Date
+              }              
+        </code></pre>
+        <p><strong>Message Queue:</strong></p>
+        <pre><code>
+            notification.email - queue for email notification
+            notification.sms - queue for SMS notification      
+        </code></pre>
+      </section>
+
+
+
+      <section id="challenges">
+        <h2>Challenges</h2>
+      
+        <h3>Algorithm Challenges</h3>
+        <ol>
+          <li>
+            <p><strong>User-defined tags:</strong> Custom entries may introduce semantic noise and inconsistencies. Although clustering and moderation mechanisms will be in place, maintaining a clean, scalable tag taxonomy requires continuous refinement and oversight.</p>
+          </li>
+          <li>
+            <p><strong>Data sparsity:</strong> Collaborative filtering models heavily rely on sufficient interaction data. In early-stage systems or low-activity segments, data sparsity can hinder the accuracy of similarity measurements and latent feature learning.</p>
+          </li>
+          <li>
+            <p><strong>Hybrid model integration:</strong> The hybrid model depends on an effective method to blend tag-based and behavioral recommendations. Designing a dynamic, adaptive weighting mechanism (parameter α) that reflects user lifecycle and engagement metrics remains an open challenge.</p>
+          </li>
+        </ol>
+      
+        <h3>Software Development Challenges</h3>
+      
+        <h4>1. Distributed Token Management</h4>
+        <ul>
+          <li><strong>Problem:</strong> JWT token revocation in a multi-service architecture led to potential security risks when users logged out or tokens expired.</li>
+          <li><strong>Solution:</strong> Implemented a Redis-based token blacklist with TTL synchronization, ensuring immediate token invalidation across all services.</li>
+        </ul>
+      
+        <h4>2. Cross-Database Consistency</h4>
+        <ul>
+          <li><strong>Problem:</strong> User profile updates required synchronization between MySQL (users table) and MongoDB (user_preferences), risking data inconsistency.</li>
+          <li><strong>Solution:</strong> Introduced a transactional outbox pattern with Kafka events to propagate changes asynchronously, achieving eventual consistency.</li>
+        </ul>
+      </section>
+
+
+    <section id="next-plan">
+        <h2>Next Plans</h2>
+  
+        <h3>Algorithm</h3>
+        <ol>
+        <li>Convert user tags into machine-readable vectors using One-Hot Encoding or TF-IDF. Each user profile will be represented as a sparse or dense vector depending on tag frequency and weight.</li>
+        <li>Implement Jaccard and Cosine Similarity functions to compare user vectors. Enable batch scoring to identify Top-N similar users from the database.</li>
+        <li>Use unsupervised learning (e.g., K-Means or DBSCAN) to cluster semantically similar custom tags. Apply dimensionality reduction (e.g., PCA or UMAP) for visualization and manual inspection of tag spaces.</li>
+        <li>Build a sparse matrix with users as rows and target users as items. Populate matrix entries based on explicit (likes) and implicit (views, skips) behavior.</li>
+        <li>Implement both user-based and item-based collaborative filtering using Pearson Correlation or Cosine Similarity.</li>
+        </ol>
+
+        <h3>Software Development</h3>
+        <h4>1. Specific Implementation of User Identity Authentication System</h4>
+        <ul>
+        <li><strong>Email verification:</strong> When registering, users need to verify their email address. The system sends a 6-digit verification code (valid for 5 minutes). The registration request must be accompanied by a verification code.</li>
+        <li><strong>Anti-bot mechanism:</strong> IP flow control for multiple registration requests in a short period of time (such as up to 3 times per minute).</li>
+        <li><strong>Risk login detection:</strong> Limit the number of login failures: 5 consecutive failures within 5 minutes will lock the account for 30 minutes.</li>
+        <li><strong>JWT (JSON Web Token) authentication:</strong> Access tokens are valid for 15 minutes, and refresh tokens are valid for 7 days (stored in Redis). Token blacklist ensures that when the user actively logs out or the token expires, it is added to Redis to prevent reuse or theft.</li>
+        </ul>
+        <h4>2. Specific Implementation of User Registration</h4>
+            <ul>
+            <li>
+                <strong>Registration form submission</strong>
+                <ul>
+                <li><strong>Front-end collection:</strong> user name, email/mobile number, password, password confirmation</li>
+                <li><strong>Basic verification:</strong> field is not empty, email format, password consistency</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Server-side processing</strong>
+                <ul>
+                <li><strong>Uniqueness check:</strong> check whether the username/email already exists</li>
+                <li><strong>Password security processing:</strong> strength verification (length, complexity)</li>
+                <li><strong>Account initialization:</strong> set the default user status (ACTIVE)</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Generate a unique user ID</strong>
+                <ul>
+                <li>Create a default record for associated users</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Response processing</strong>
+                <ul>
+                <li><strong>Success:</strong> return 201 Created, including basic user information (excluding sensitive data)</li>
+                <li><strong>Failure:</strong> return a specific error (such as "email already registered")</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Data storage</strong>
+                <ul>
+                <li>MySQL user table records core information</li>
+                <li>MongoDB stores extended attributes (such as preferences)</li>
+                <li>Redis caches newly registered users (anti-duplicate submission)</li>
+                </ul>
+            </li>
+            </ul>
+
+          <h4>3. Specific implementation of user login service</h4>
+          <ul>
+            <li>
+              <strong>Credential verification:</strong>
+              <ul>
+                <li>Support username/email + password login</li>
+                <li>Account status check: whether it is locked/disabled</li>
+              </ul>
+            </li>
+          
+            <li>
+              <strong>Session creation:</strong>
+              <ul>
+                <li>Record login device/IP information</li>
+              </ul>
+            </li>
+          
+            <li>
+              <strong>Response processing</strong>
+              <ul>
+                <li><strong>Success:</strong> return 200 OK, including Access Token and user basic information</li>
+                <li><strong>Failure:</strong> Return specific reasons (such as "wrong password", remaining number of attempts)</li>
+              </ul>
+            </li>
+          </ul>
+          <h4>4. Supporting Basic Services</h4>
+          <ul>
+            <li>
+              <strong>Account activation</strong>
+              <ul>
+                <li>Send activation link (including time-limited token) after registration</li>
+                <li>Limited function usage for unactivated accounts</li>
+              </ul>
+            </li>
+          
+            <li>
+              <strong>Password service</strong>
+              <ul>
+                <li>Password reset (via verification email)</li>
+                <li>Password change (need to verify the original password)</li>
+              </ul>
+            </li>
+          
+            <li>
+              <strong>Session management</strong>
+              <ul>
+                <li>Login status query</li>
+                <li>Active logout (token expired)</li>
+                <li>Multi-device session management</li>
+              </ul>
+            </li>
+          </ul>
+      </section>
+    
+
+    
 
     <section id="report">
         <h2>Download Full Report</h2>

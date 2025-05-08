@@ -22,3 +22,21 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+  function showPhase(phase) {
+    const phases = document.querySelectorAll('.phase-content');
+    const buttons = document.querySelectorAll('.progress-nav button');
+    
+    phases.forEach(p => p.style.display = 'none');
+    buttons.forEach(b => b.classList.remove('active'));
+  
+    document.getElementById(phase).style.display = 'block';
+    buttons.forEach(button => {
+      if (button.textContent.trim().toLowerCase().includes(phase.split('phase')[1])) {
+        button.classList.add('active');
+      }
+    });
+  }
+  
+  // 默认展示 Phase 1
+  showPhase('phase2');
+  

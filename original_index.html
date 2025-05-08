@@ -23,7 +23,7 @@
         <li><a href="#achievements">Achievements</a></li>
         <li><a href="#challenges">Challenges</a></li>
         <li><a href="#next-plan">Next Plans</a></li>
-        <!-- <li><a href="#report"> Download Report</a></li> -->
+        <li><a href="#report"> Download Report</a></li>
       </ul>
     </nav>
   </header>
@@ -47,13 +47,13 @@
     <section id="progress">
         <h2>Project Progress</h2>
   
-        <div class="milestone" >
+        <div class="milestone">
           <p>Milestone 1 - Microservices Design & Setup <span class="time"> (Apr 7)</span></p>
           <div class="progress-bar"><div data-percentage="100"><span></span></div></div>
         </div>
-        <div class="milestone" >
+        <div class="milestone">
           <p>Milestone 2 - Authentication & Matching Model <span class="time">(May 5)</span></p>
-          <div class="progress-bar"><div data-percentage="100"><span></span></div></div>
+          <div class="progress-bar"><div data-percentage="0"><span></span></div></div>
         </div>
         <div class="milestone">
           <p>Milestone 3 - Real-Time Chat System <span class="time">(Jun 1)</span></p>
@@ -69,22 +69,14 @@
         </div>
       </section>
 
-      <section id="achievements">
+    <section id="achievements">
         <h2>Achievements</h2>
-        <div class="progress-nav">
-          <button onclick="showPhase('phase1')">Milestone 1</button>
-          <button onclick="showPhase('phase2')" class="active">Milestone 2</button>
-          <button disabled class="disabled-btn">Milestone 3</button>
-          <button disabled class="disabled-btn">Milestone 4</button>
-          <button disabled class="disabled-btn">Milestone 5</button>
-        </div>
       
-        <div id="phase1" class="phase-content">
-          <h3>1. System Architecture</h3>
+        <h3>1. System Architecture</h3>
         <p>We have completed the design of a microservices-based architecture. The architecture includes an API Gateway for routing and authentication, and separates core services like User, Matching, Chat, Media, and Notification. Data is stored using a polyglot persistence strategy, including MySQL, MongoDB, Redis, and CDN storage. Message queues ensure efficient asynchronous communication.</p>
       
         <div class="diagram">
-            <img src="images/architecture.png" alt="System Architecture Diagram"
+            <img src="architecture.png" alt="System Architecture Diagram"
                  style="max-width: 100%; height: auto; display: block; margin: 0 auto; border-radius: 10px;" />
         </div>
       
@@ -345,197 +337,6 @@
             notification.email - queue for email notification
             notification.sms - queue for SMS notification      
         </code></pre>
-        </div>
-      
-        <div id="phase2" class="phase-content" style="display: none;">
-
-      
-        <h3>1. Algorithm Design</h3>
-
-        <h3>1.1 Tag-Based Recommendation Algorithm</h3>
-        <p>We have completed the development of the following key features:</p>
-        <ul>
-        <li>
-            <strong>Tag Library and Vector Representation: </strong> A tag library containing commonly used tags is constructed, and the tags are converted to vector representation by One-Hot coding and TF-IDF methods to facilitate similarity calculation.
-        </li>
-        <li>
-            <strong>Similarity calculation:</strong> Jaccard similarity coefficient and cosine similarity are used to calculate the overlap of user tags. 
-        </li>
-        <li>
-          <strong>User clustering:</strong> Initially, the K-Means algorithm is applied to cluster user labels to identify interest groups and reduce the amount of computation for one-by-one matching. 
-        </li>
-        </ul>
-        
-        <h3>1.2 Collaborative Filtering Algorithm</h3>
-        <p>The development of the collaborative filtering algorithm focuses on the analysis of user behavior, and the progress is as follows:</p>
-        <ul>
-        <li>
-            <strong>User-object interaction matrix: </strong> an interaction matrix is constructed based on user behavior (likes, comments, chat frequency, browsing length, etc.) to record explicit and implicit feedback (e.g., skipping recommended objects).
-        </li>
-        <li>
-            <strong>User-based collaborative filtering: </strong>user behavior similarity is calculated by Pearson's correlation coefficient, and objects liked by other users with similar interests are recommended for the user.
-        </li>
-        </ul>
-
-
-
-        <h3>2. Software Development</h3>
-        <h3>2.1 Technical Architecture</h3>
-        <p><img src="images/structure.png" alt="System Architecture Diagram" style="max-width: 100%; height: auto;"></p>
-
-        <h4>Core Technology Stack</h4>
-        <ul>
-            <li><strong>Core Framework:</strong> Spring Boot 3.x, Spring Security</li>
-            <li><strong>Databases:</strong> MySQL (user data), MongoDB (user preferences)</li>
-            <li><strong>Authentication:</strong> JWT (to be implemented), BCrypt password encryption</li>
-            <li><strong>API Style:</strong> RESTful</li>
-        </ul>
-
-        <h3>2.2 Completed Modules</h3>
-        <h4>1. Security Authentication Module</h4>
-        <ul>
-            <li><strong>SecurityConfig:</strong> Role-based access control configuration</li>
-            <ul>
-                <li>Open <code>/api/auth/**</code> endpoints</li>
-                <li>Protect <code>/api/users/**</code> and <code>/api/preferences/**</code> endpoints</li>
-                <li>Configured password encryption (BCrypt) and session management</li>
-            </ul>
-            <img src="images/security_config.jpg" alt="SecurityConfig Code" style="max-width: 60%; height: auto; margin: 10px 0; border-radius: 8px;">
-            <li><strong>UserDetailsServiceImpl:</strong> Implemented Spring Security's UserDetailsService</li>
-            <img src="images/detial_service.jpg" alt="UserDetailsServiceImpl Code" style="max-width: 60%; height: auto; margin: 10px 0; border-radius: 8px;">
-        </ul>
-
-        <h4>2. User Authentication Module</h4>
-        <ul>
-            <li><strong>AuthController:</strong></li>
-            <ul>
-                <li><code>/api/auth/register</code>: User registration endpoint</li>
-                <li>Integrated validation framework for input verification</li>
-            </ul>
-            <img src="images/authcontroller.jpg" alt="AuthController Code" style="max-width: 60%; height: auto; margin: 10px 0; border-radius: 8px;">
-
-            <li><strong>Exception Handling:</strong></li>
-            <ul>
-                <li><code>DuplicateUserException</code>: Username/email duplication</li>
-                <li><code>InvalidPasswordException</code>: Wrong password</li>
-                <li><code>UserNotFoundException</code>: User not found</li>
-            </ul>
-            <img src="images/exception.jpg" alt="Exception Handling Code" style="max-width: 60%; height: auto; margin: 10px 0; border-radius: 8px;">
-        </ul>
-
-        <h4>3. User Management Module</h4>
-        <ul>
-            <li><strong>UserController:</strong></li>
-            <ul>
-                <li><code>GET /api/users/me</code>: Get current user profile</li>
-                <li><code>PUT /api/users/info</code>: Update basic user information</li>
-                <li><code>PUT /api/users/password</code>: Change password</li>
-            </ul>
-            <img src="images/usercontroller.jpg" alt="UserController Code" style="max-width: 60%; height: auto; margin: 10px 0; border-radius: 8px;">
-
-            <li><strong>UserService:</strong> Implemented user CRUD operations</li>
-            <ul>
-                <li>Password encryption storage</li>
-                <li>Uniqueness validation (username/email)</li>
-            </ul>
-            <img src="images/userservice.jpg" alt="UserService Code" style="max-width: 60%; height: auto; margin: 10px 0; border-radius: 8px;">
-        </ul>
-
-        <h4>4. User Preferences Module</h4>
-        <ul>
-            <li><strong>UserPreferences (MongoDB):</strong></li>
-            <ul>
-                <li>Stores matching preferences (age range, distance, gender)</li>
-                <li>Stores interest tags and important traits</li>
-            </ul>
-            <img src="images/userpreference.jpg" alt="UserPreferences Code" style="max-width: 60%; height: auto; margin: 10px 0; border-radius: 8px;">
-
-            <li><strong>UserPreferencesService:</strong> Provides default preference settings</li>
-            <ul>
-                <li>Supports dynamic preference updates</li>
-            </ul>
-            <img src="images/userpreferenceservice.jpg" alt="UserPreferencesService Code" style="max-width: 60%; height: auto; margin: 10px 0; border-radius: 8px;">
-        </ul>
-
-        <h4>5. User Settings Module</h4>
-        <ul>
-            <li><strong>UserSettings (MySQL):</strong></li>
-            <ul>
-                <li>Notification settings (email, SMS, push)</li>
-                <li>Privacy levels (public, private, friends only)</li>
-                <li>Online status display control</li>
-            </ul>
-            <img src="images/usersetting.jpg" alt="UserSettings Code" style="max-width: 60%; height: auto; margin: 10px 0; border-radius: 8px;">
-        </ul>
-        <h3>Database Design</h3>
-
-        <h4>MySQL Schema</h4>
-        <pre><code>
-        CREATE TABLE users (
-            id BIGINT AUTO_INCREMENT PRIMARY KEY,
-            username VARCHAR(50) UNIQUE NOT NULL,
-            email VARCHAR(100) UNIQUE NOT NULL,
-            password_hash VARCHAR(100) NOT NULL,
-            account_status ENUM('ACTIVE', 'INACTIVE', 'SUSPENDED', 'DELETED'),
-            created_at TIMESTAMP,
-            updated_at TIMESTAMP
-        );
-
-        CREATE TABLE user_settings (
-            id BIGINT AUTO_INCREMENT PRIMARY KEY,
-            user_id BIGINT UNIQUE,
-            notification_email BOOLEAN DEFAULT true,
-            notification_push BOOLEAN DEFAULT true,
-            notification_sms BOOLEAN DEFAULT false,
-            privacy_level ENUM('PUBLIC', 'PRIVATE', 'FRIENDS_ONLY'),
-            FOREIGN KEY (user_id) REFERENCES users(id)
-        );
-        </code></pre>
-
-        <h4>MongoDB Collection</h4>
-        <pre><code>
-          {
-            "user_preferences": {
-              "userId": Long,
-              "minAge": Integer,
-              "maxDistance": Integer,
-              "genderPreference": ["male", "female", "other"],
-              "interests": ["music", "sports"],
-              "importantTraits": ["honesty", "humor"],
-              "createdAt": ISODate,
-              "updatedAt": ISODate
-            }
-          }
-        </code></pre>
-        <h3>UI Design</h3>
-
-      <h4>1. Register</h4>
-      <p><img src="images/register.png" alt="Register UI" style="max-width: 100%; height: auto; border-radius: 8px;"></p>
-
-      <h4>2. Login</h4>
-      <p><img src="images/login.png" alt="Login UI" style="max-width: 100%; height: auto; border-radius: 8px;"></p>
-
-      <h4>3. Profile</h4>
-      <p><img src="images/profile.png" alt="Profile UI" style="max-width: 100%; height: auto; border-radius: 8px;"></p>
-
-      <h4>4. Preference</h4>
-      <p><img src="images/preference.png" alt="Preference UI" style="max-width: 100%; height: auto; border-radius: 8px;"></p>
-        
-      <h3>Current Progress Evaluation</h3>
-      <p><img src="images/Current Progress Evaluation.png" alt="Register UI" style="max-width: 100%; height: auto; border-radius: 8px;"></p>
-
-
-
-
-
-
-
-
-
-
-
-
-        </div>
       </section>
 
 
@@ -546,76 +347,29 @@
         <h3>Algorithm Challenges</h3>
         <ol>
           <li>
-            <p><strong>Cold start problem:</strong> New users rely on label quality for recommendation effect due to lack of behavioral data, and some custom labels are too scattered.</p>
+            <p><strong>User-defined tags:</strong> Custom entries may introduce semantic noise and inconsistencies. Although clustering and moderation mechanisms will be in place, maintaining a clean, scalable tag taxonomy requires continuous refinement and oversight.</p>
           </li>
           <li>
-            <p><strong>Computational load:</strong> When large-scale users are matched, the computational cost of real-time collaborative filtering is high.</p>
+            <p><strong>Data sparsity:</strong> Collaborative filtering models heavily rely on sufficient interaction data. In early-stage systems or low-activity segments, data sparsity can hinder the accuracy of similarity measurements and latent feature learning.</p>
           </li>
           <li>
-            <p><strong>Label management:</strong> The audit and clustering of custom labels need to be further optimized to avoid label library expansion.</p>
+            <p><strong>Hybrid model integration:</strong> The hybrid model depends on an effective method to blend tag-based and behavioral recommendations. Designing a dynamic, adaptive weighting mechanism (parameter α) that reflects user lifecycle and engagement metrics remains an open challenge.</p>
           </li>
         </ol>
       
         <h3>Software Development Challenges</h3>
       
-        <h4>1. Hybrid Database Integration</h4>
+        <h4>1. Distributed Token Management</h4>
         <ul>
-            <li><strong>Challenge:</strong> 
-                The architecture requires seamless coordination between MySQL (for transactional user data) and MongoDB (for flexible preference storage), as shown in your diagram's dual database connections.
-            </li>
-            <li><strong>Solution:</strong>
-                <ul>
-                    <li>Implemented repository pattern with distinct <code>UserRepository</code> (JPA) and <code>UserPreferencesRepository</code> (MongoDB) interfaces.</li>
-                    <li>Added transactional boundaries to ensure data consistency during cross-database operations.</li>
-                </ul>
-            </li>
+          <li><strong>Problem:</strong> JWT token revocation in a multi-service architecture led to potential security risks when users logged out or tokens expired.</li>
+          <li><strong>Solution:</strong> Implemented a Redis-based token blacklist with TTL synchronization, ensuring immediate token invalidation across all services.</li>
         </ul>
-
-        <h4>2. Security Pipeline Complexity</h4>
+      
+        <h4>2. Cross-Database Consistency</h4>
         <ul>
-            <li><strong>Challenge:</strong> 
-                Multiple security layers (<code>SecurityConfig</code>, <code>CorsConfig</code>, <code>UserDetailsServiceImpl</code>) that must work cohesively without compromising API Gateway throughput.
-            </li>
-            <li><strong>Solution:</strong>
-                <ul>
-                    <li>Configured Spring Security filter chain to delegate authentication to <code>UserDetailsServiceImpl</code> while maintaining stateless sessions.</li>
-                    <li>Optimized CORS policies at gateway level (<code>CorsConfig</code>) to reduce preflight requests.</li>
-                    <li>Implemented role-based endpoint protection matching the controller-service hierarchy in your architecture.</li>
-                </ul>
-            </li>
+          <li><strong>Problem:</strong> User profile updates required synchronization between MySQL (users table) and MongoDB (user_preferences), risking data inconsistency.</li>
+          <li><strong>Solution:</strong> Introduced a transactional outbox pattern with Kafka events to propagate changes asynchronously, achieving eventual consistency.</li>
         </ul>
-
-        <h4>3. Exception Handling Across Layers</h4>
-        <ul>
-            <li><strong>Challenge:</strong> 
-                The diagram shows exceptions (<code>DuplicateUserException</code>, etc.) propagating through <code>GlobalExceptionHandler</code> while maintaining clean controller-service boundaries.
-            </li>
-            <li><strong>Solution:</strong>
-                <ul>
-                    <li>Created a unified error response format handled by <code>GlobalExceptionHandler</code>, with:</li>
-                    <ul>
-                        <li><strong>Controller-level:</strong> Validation exceptions (400 Bad Request)</li>
-                        <li><strong>Service-level:</strong> Business rule violations (409 Conflict)</li>
-                        <li><strong>Repository-level:</strong> Data access errors (500 Internal Server Error)</li>
-                    </ul>
-                </ul>
-            </li>
-        </ul>
-
-        <h4>4. Component Coupling Risks</h4>
-        <ul>
-            <li><strong>Challenge:</strong> 
-                Your architecture's dependency tree (controllers → services → repositories) risks tight coupling, especially with cross-cutting concerns like authentication.
-            </li>
-            <li><strong>Solution:</strong>
-                <ul>
-                    <li>Enforced dependency inversion via interface-based services (<code>UserDetailsService</code>).</li>
-                    <li>Isolated security logic in <code>SecurityConfig</code> using Spring Security's DSL.</li>
-                    <li>Made <code>UserService</code> and <code>UserPreferencesService</code> independently testable despite DB differences.</li>
-                </ul>
-            </li>
-        </ul>
-
       </section>
 
 
@@ -624,40 +378,126 @@
   
         <h3>Algorithm</h3>
         <ol>
-        <li><strong>Algorithm Fusion:</strong> to balance the explicit input and implicit preference, the recommendation score is calculated as: Score = α * label similarity + (1-α) * collaborative filtering score.</li>
-        <li><strong>Model Tuning:</strong> conduct A/B testing based on real user data, optimize the dynamic adjustment strategy of α parameters, and improve the recommendation accuracy.</li>
+        <li>Convert user tags into machine-readable vectors using One-Hot Encoding or TF-IDF. Each user profile will be represented as a sparse or dense vector depending on tag frequency and weight.</li>
+        <li>Implement Jaccard and Cosine Similarity functions to compare user vectors. Enable batch scoring to identify Top-N similar users from the database.</li>
+        <li>Use unsupervised learning (e.g., K-Means or DBSCAN) to cluster semantically similar custom tags. Apply dimensionality reduction (e.g., PCA or UMAP) for visualization and manual inspection of tag spaces.</li>
+        <li>Build a sparse matrix with users as rows and target users as items. Populate matrix entries based on explicit (likes) and implicit (views, skips) behavior.</li>
+        <li>Implement both user-based and item-based collaborative filtering using Pearson Correlation or Cosine Similarity.</li>
         </ol>
 
         <h3>Software Development</h3>
-
-        
-        <h4>1. Pending Features</h4>
+        <h4>1. Specific Implementation of User Identity Authentication System</h4>
         <ul>
-            <li><strong>JWT Authentication:</strong> Stateless token-based authentication</li>
-            <li><strong>API Documentation:</strong> Swagger integration for API documentation and testing</li>
-            <li><strong>Caching Mechanism:</strong> Use Redis for high-frequency data caching</li>
-            <li><strong>Message Queue:</strong> Implement asynchronous notification system</li>
-            <li><strong>Monitoring System:</strong> Integrate Prometheus and Grafana for real-time monitoring</li>
+        <li><strong>Email verification:</strong> When registering, users need to verify their email address. The system sends a 6-digit verification code (valid for 5 minutes). The registration request must be accompanied by a verification code.</li>
+        <li><strong>Anti-bot mechanism:</strong> IP flow control for multiple registration requests in a short period of time (such as up to 3 times per minute).</li>
+        <li><strong>Risk login detection:</strong> Limit the number of login failures: 5 consecutive failures within 5 minutes will lock the account for 30 minutes.</li>
+        <li><strong>JWT (JSON Web Token) authentication:</strong> Access tokens are valid for 15 minutes, and refresh tokens are valid for 7 days (stored in Redis). Token blacklist ensures that when the user actively logs out or the token expires, it is added to Redis to prevent reuse or theft.</li>
         </ul>
+        <h4>2. Specific Implementation of User Registration</h4>
+            <ul>
+            <li>
+                <strong>Registration form submission</strong>
+                <ul>
+                <li><strong>Front-end collection:</strong> user name, email/mobile number, password, password confirmation</li>
+                <li><strong>Basic verification:</strong> field is not empty, email format, password consistency</li>
+                </ul>
+            </li>
 
-        <h4>2. Optimization Directions</h4>
-        <ul>
-            <li>Implement API versioning for backward compatibility</li>
-            <li>Enable distributed tracing for better microservice tracking</li>
-            <li>Improve unit test coverage to enhance reliability</li>
-            <li>Optimize database query performance for faster response times</li>
-        </ul>
+            <li>
+                <strong>Server-side processing</strong>
+                <ul>
+                <li><strong>Uniqueness check:</strong> check whether the username/email already exists</li>
+                <li><strong>Password security processing:</strong> strength verification (length, complexity)</li>
+                <li><strong>Account initialization:</strong> set the default user status (ACTIVE)</li>
+                </ul>
+            </li>
 
-        
+            <li>
+                <strong>Generate a unique user ID</strong>
+                <ul>
+                <li>Create a default record for associated users</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Response processing</strong>
+                <ul>
+                <li><strong>Success:</strong> return 201 Created, including basic user information (excluding sensitive data)</li>
+                <li><strong>Failure:</strong> return a specific error (such as "email already registered")</li>
+                </ul>
+            </li>
+
+            <li>
+                <strong>Data storage</strong>
+                <ul>
+                <li>MySQL user table records core information</li>
+                <li>MongoDB stores extended attributes (such as preferences)</li>
+                <li>Redis caches newly registered users (anti-duplicate submission)</li>
+                </ul>
+            </li>
+            </ul>
+
+          <h4>3. Specific implementation of user login service</h4>
+          <ul>
+            <li>
+              <strong>Credential verification:</strong>
+              <ul>
+                <li>Support username/email + password login</li>
+                <li>Account status check: whether it is locked/disabled</li>
+              </ul>
+            </li>
+          
+            <li>
+              <strong>Session creation:</strong>
+              <ul>
+                <li>Record login device/IP information</li>
+              </ul>
+            </li>
+          
+            <li>
+              <strong>Response processing</strong>
+              <ul>
+                <li><strong>Success:</strong> return 200 OK, including Access Token and user basic information</li>
+                <li><strong>Failure:</strong> Return specific reasons (such as "wrong password", remaining number of attempts)</li>
+              </ul>
+            </li>
+          </ul>
+          <h4>4. Supporting Basic Services</h4>
+          <ul>
+            <li>
+              <strong>Account activation</strong>
+              <ul>
+                <li>Send activation link (including time-limited token) after registration</li>
+                <li>Limited function usage for unactivated accounts</li>
+              </ul>
+            </li>
+          
+            <li>
+              <strong>Password service</strong>
+              <ul>
+                <li>Password reset (via verification email)</li>
+                <li>Password change (need to verify the original password)</li>
+              </ul>
+            </li>
+          
+            <li>
+              <strong>Session management</strong>
+              <ul>
+                <li>Login status query</li>
+                <li>Active logout (token expired)</li>
+                <li>Multi-device session management</li>
+              </ul>
+            </li>
+          </ul>
       </section>
     
 
     
 
-    <!-- <section id="report">
+    <section id="report">
         <h2>Download Full Report</h2>
         <a class="download-btn" href="report.pdf" download>📄 Download AIris Full Proposal (PDF)</a>
-    </section> -->
+      </section>
     </main>
   
     <footer>

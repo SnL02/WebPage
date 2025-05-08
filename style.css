@@ -144,6 +144,45 @@ body {
     font-size: 0.9em;
     color: #333;
   }
+ /* 横向 Progress Nav */
+.progress-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.progress-nav button {
+  flex: 1;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(to right, #3a8fb7, #569fd3); /* 浅冷静蓝色渐变 */
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* 激活状态 */
+.progress-nav button.active {
+  background-color: #569fd3;
+  transform: scale(1.05);
+}
+
+/* 禁用状态 */
+.progress-nav button:disabled {
+  background: #cccccc !important; /* 强制覆盖渐变 */
+  color: #666666 !important;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+
+
+
+
 
   /* ------- Responsive layout for mobile ------- */
   @media (max-width: 768px) {
